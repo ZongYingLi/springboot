@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        配置HelloWorld的bean实例  属性注入的方式setter
+        1.配置bean ： 通过无参构造方法实例化
+            id属性 唯一标识
+            class属性 全类名
+        2.配置property： 通过setXxx()赋值
+            name属性 给当前class指向的类中的哪一个属性赋值
+            value属性 赋值
+    -->
+    <bean id="h" class="com.igeek.ch01.hello.HelloWorld">
+        <property name="username1" value="李四"></property>
+    </bean>
+
+</beans>

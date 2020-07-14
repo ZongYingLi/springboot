@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="p1" class="com.igeek.ch02.ref.Person">
+        <property name="username" value="王朝"></property>
+        <property name="age" value="56"></property>
+        <!-- 通过ref属性或者ref标签实现关联关系的赋值 -->
+        <property name="car" ref="c"></property>
+
+        <!--
+            修改当前car对象的价格，要求必须在操作之前先完成对car的赋值
+            级联属性进行操作  car.price  等价于Person的对象 setCar() ，Car的对象setPrice()
+        -->
+        <property name="car.price" value="500000.0"></property>
+    </bean>
+
+    <!--<bean id="p2" class="com.igeek.ch02.ref.Person">
+        <property name="username" value="马汉"></property>
+        <property name="age" value="66"></property>
+        &lt;!&ndash; 通过ref属性或者ref标签实现关联关系的赋值 &ndash;&gt;
+        <property name="car" ref="c"></property>
+    </bean>-->
+
+    <bean id="c" class="com.igeek.ch02.ref.Car">
+        <property name="label" value="奥迪"></property>
+        <property name="price" value="300000.0"></property>
+    </bean>
+
+</beans>
